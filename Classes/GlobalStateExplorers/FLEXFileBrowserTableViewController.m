@@ -88,7 +88,8 @@
 
     UIMenuItem *renameMenuItem = [[UIMenuItem alloc] initWithTitle:@"Rename" action:@selector(fileBrowserRename:)];
     UIMenuItem *deleteMenuItem = [[UIMenuItem alloc] initWithTitle:@"Delete" action:@selector(fileBrowserDelete:)];
-    [UIMenuController sharedMenuController].menuItems = @[renameMenuItem, deleteMenuItem];
+    UIMenuItem *openMenuItem = [[UIMenuItem alloc] initWithTitle:@"Open" action:@selector(fileBrowserOpen:)];
+    [UIMenuController sharedMenuController].menuItems = @[renameMenuItem, deleteMenuItem,openMenuItem];
 }
 
 #pragma mark - FLEXFileBrowserSearchOperationDelegate
@@ -290,6 +291,16 @@
     NSString *fullPath = [self filePathAtIndexPath:indexPath];
     
     self.fileOperationController = [[FLEXFileBrowserFileDeleteOperationController alloc] initWithPath:fullPath];
+    self.fileOperationController.delegate = self;
+    [self.fileOperationController show];
+}
+
+- (void)fileBrowserOpen:(UITableViewCell *)sender
+{
+    NSIndexPath *indexPath = [self.tableView indexPathForCell:sender];
+    NSString *fullPath = [self filePathAtIndexPath:indexPath];
+    
+    self.fileOperationController = [[FLEXFileBrowserFileOpenOperationController alloc] initWithPath:fullPath];
     self.fileOperationController.delegate = self;
     [self.fileOperationController show];
 }

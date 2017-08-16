@@ -18,6 +18,7 @@
 - (void)showExplorer;
 - (void)hideExplorer;
 - (void)toggleExplorer;
+- (UIViewController *)topViewController;
 
 #pragma mark - Network Debugging
 

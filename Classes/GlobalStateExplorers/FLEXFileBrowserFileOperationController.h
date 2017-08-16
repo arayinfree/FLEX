@@ -31,3 +31,7 @@
 
 @interface FLEXFileBrowserFileRenameOperationController : NSObject <FLEXFileBrowserFileOperationController>
 @end
+
+@interface FLEXFileBrowserFileOpenOperationController : NSObject <FLEXFileBrowserFileOperationController>
+@end
+

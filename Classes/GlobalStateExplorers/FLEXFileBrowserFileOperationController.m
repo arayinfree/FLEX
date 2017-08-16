@@ -8,7 +8,7 @@
 
 #import "FLEXFileBrowserFileOperationController.h"
 #import <UIKit/UIKit.h>
-
+#import "FLEXManager.h"
 @interface FLEXFileBrowserFileDeleteOperationController () <UIAlertViewDelegate>
 
 @property (nonatomic, copy, readonly) NSString *path;
@@ -116,6 +116,72 @@
         textField.placeholder = @"New file name";
         textField.text = self.path.lastPathComponent;
         [renameDialog show];
+    } else {
+        [[[UIAlertView alloc] initWithTitle:@"File Removed" message:@"The file at the specified path no longer exists." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
+    }
+}
+
+#pragma mark - UIAlertViewDelegate
+
+- (void)alertView:(UIAlertView *)alertView clickedButtonAtIndex:(NSInteger)buttonIndex
+{
+    if (buttonIndex == alertView.cancelButtonIndex) {
+        // Nothing, just cancel
+    } else if (buttonIndex == alertView.firstOtherButtonIndex) {
+        NSString *newFileName = [alertView textFieldAtIndex:0].text;
+        NSString *newPath = [[self.path stringByDeletingLastPathComponent] stringByAppendingPathComponent:newFileName];
+        [[NSFileManager defaultManager] moveItemAtPath:self.path toPath:newPath error:NULL];
+    }
+}
+
+- (void)alertView:(UIAlertView *)alertView didDismissWithButtonIndex:(NSInteger)buttonIndex
+{
+    [self.delegate fileOperationControllerDidDismiss:self];
+}
+
+@end
+
+@interface FLEXFileBrowserFileOpenOperationController () <UIAlertViewDelegate>
+
+@property (nonatomic, copy, readonly) NSString *path;
+
+- (instancetype)initWithPath:(NSString *)path NS_DESIGNATED_INITIALIZER;
+
+@end
+
+@implementation FLEXFileBrowserFileOpenOperationController
+
+@synthesize delegate = _delegate;
+
+- (instancetype)init
+{
+    return [self initWithPath:nil];
+}
+
+- (instancetype)initWithPath:(NSString *)path
+{
+    self = [super init];
+    if (self) {
+        _path = path;
+    }
+    
+    return self;
+}
+
+- (void)show
+{
+    BOOL isDirectory = NO;
+    BOOL stillExists = [[NSFileManager defaultManager] fileExistsAtPath:self.path isDirectory:&isDirectory];
+    
+    if (stillExists) {
+        UIDocumentInteractionController *documentController = [UIDocumentInteractionController interactionControllerWithURL:[NSURL fileURLWithPath:_path]];
+        
+        
+        documentController.UTI = @"public.plain-text";//You need to set the UTI (Uniform Type Identifiers) for the documentController object so that it can help the system find the appropriate application to open your document. In this case, it is set to “com.adobe.pdf”, which represents a PDF document. Other common UTIs are "com.apple.quicktime-movie" (QuickTime movies), "public.html" (HTML documents), and "public.jpeg" (JPEG files)
+        
+        [documentController presentOpenInMenuFromRect:CGRectZero inView:[FLEXManager sharedManager].topViewController.view animated:YES];
+
+    
     } else {
         [[[UIAlertView alloc] initWithTitle:@"File Removed" message:@"The file at the specified path no longer exists." delegate:nil cancelButtonTitle:@"OK" otherButtonTitles:nil] show];
     }
