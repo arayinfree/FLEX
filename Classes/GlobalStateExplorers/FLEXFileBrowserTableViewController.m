@@ -89,7 +89,7 @@
     UIMenuItem *renameMenuItem = [[UIMenuItem alloc] initWithTitle:@"Rename" action:@selector(fileBrowserRename:)];
     UIMenuItem *deleteMenuItem = [[UIMenuItem alloc] initWithTitle:@"Delete" action:@selector(fileBrowserDelete:)];
     UIMenuItem *openMenuItem = [[UIMenuItem alloc] initWithTitle:@"Open" action:@selector(fileBrowserOpen:)];
-    [UIMenuController sharedMenuController].menuItems = @[renameMenuItem, deleteMenuItem,openMenuItem];
+    [UIMenuController sharedMenuController].menuItems = @[renameMenuItem,openMenuItem, deleteMenuItem];
 }
 
 #pragma mark - FLEXFileBrowserSearchOperationDelegate
@@ -249,7 +249,8 @@
 
 - (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
 {
-    return action == @selector(fileBrowserDelete:) || action == @selector(fileBrowserRename:);
+    //|| action == @selector(fileBrowserRename:)
+    return action == @selector(fileBrowserDelete:)  || action == @selector(fileBrowserOpen:);
 }
 
 - (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
@@ -354,6 +355,12 @@
 }
 
 - (void)fileBrowserDelete:(UIMenuController *)sender
+{
+    id target = [self.nextResponder targetForAction:_cmd withSender:sender];
+    [[UIApplication sharedApplication] sendAction:_cmd to:target from:self forEvent:nil];
+}
+
+- (void)fileBrowserOpen:(UIMenuController *)sender
 {
     id target = [self.nextResponder targetForAction:_cmd withSender:sender];
     [[UIApplication sharedApplication] sendAction:_cmd to:target from:self forEvent:nil];

@@ -10,6 +10,9 @@
 		22679D581C74188D002248FC /* Dog.m in Sources */ = {isa = PBXBuildFile; fileRef = 22679D571C74188D002248FC /* Dog.m */; };
 		22679D5C1C7418B6002248FC /* Owner.m in Sources */ = {isa = PBXBuildFile; fileRef = 22679D5B1C7418B6002248FC /* Owner.m */; };
 		22679D5D1C741A7A002248FC /* dogs.realm in Resources */ = {isa = PBXBuildFile; fileRef = 22679D551C741764002248FC /* dogs.realm */; };
+		2E6023331F4474C600AD4E56 /* FLEX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6023321F4474C600AD4E56 /* FLEX.framework */; };
+		2E6023381F44823D00AD4E56 /* FLEX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6023371F44823D00AD4E56 /* FLEX.framework */; };
+		2E6023391F44823D00AD4E56 /* FLEX.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 2E6023371F44823D00AD4E56 /* FLEX.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 		3EC6487318FF8A5000024205 /* ReadMe.txt in Resources */ = {isa = PBXBuildFile; fileRef = 3EC6487218FF8A5000024205 /* ReadMe.txt */; };
 		5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823D18F3656900BAAD62 /* Foundation.framework */; };
 		5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 5356823F18F3656900BAAD62 /* CoreGraphics.framework */; };
@@ -45,7 +48,6 @@
 		535682BF18F3670300BAAD62 /* UIColor+AAPLApplicationSpecific.m in Sources */ = {isa = PBXBuildFile; fileRef = 535682A618F3670300BAAD62 /* UIColor+AAPLApplicationSpecific.m */; };
 		53874F9918F36B1800510922 /* Localizable.strings in Resources */ = {isa = PBXBuildFile; fileRef = 53874F9718F36B1800510922 /* Localizable.strings */; };
 		779B1EF51C0C4F25001F5E49 /* libsqlite3.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 779B1EF41C0C4F25001F5E49 /* libsqlite3.dylib */; };
-		9420A1AD1C1E84EE00B587DF /* FLEX.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 9420A1AC1C1E84EE00B587DF /* FLEX.framework */; };
 		943203FE1978F42F00E24DB3 /* AAPLCatalogTableTableViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 943203FD1978F42F00E24DB3 /* AAPLCatalogTableTableViewController.m */; };
 		94CB4D431A97183E0054A905 /* libz.dylib in Frameworks */ = {isa = PBXBuildFile; fileRef = 94CB4D421A97183E0054A905 /* libz.dylib */; };
 /* End PBXBuildFile section */
@@ -57,6 +59,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 10;
 			files = (
+				2E6023391F44823D00AD4E56 /* FLEX.framework in Embed Frameworks */,
 			);
 			name = "Embed Frameworks";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -69,6 +72,8 @@
 		22679D571C74188D002248FC /* Dog.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Dog.m; sourceTree = "<group>"; };
 		22679D5A1C7418B6002248FC /* Owner.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = Owner.h; sourceTree = "<group>"; };
 		22679D5B1C7418B6002248FC /* Owner.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = Owner.m; sourceTree = "<group>"; };
+		2E6023321F4474C600AD4E56 /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; path = FLEX.framework; sourceTree = "<group>"; };
+		2E6023371F44823D00AD4E56 /* FLEX.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = FLEX.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		3EC6487218FF8A5000024205 /* ReadMe.txt */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text; path = ReadMe.txt; sourceTree = SOURCE_ROOT; };
 		5356823A18F3656900BAAD62 /* UICatalog.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = UICatalog.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5356823D18F3656900BAAD62 /* Foundation.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Foundation.framework; path = System/Library/Frameworks/Foundation.framework; sourceTree = SDKROOT; };
@@ -132,7 +137,6 @@
 		535682A618F3670300BAAD62 /* UIColor+AAPLApplicationSpecific.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = "UIColor+AAPLApplicationSpecific.m"; sourceTree = "<group>"; };
 		53874F9818F36B1800510922 /* en */ = {isa = PBXFileReference; lastKnownFileType = text.plist.strings; name = en; path = en.lproj/Localizable.strings; sourceTree = "<group>"; };
 		779B1EF41C0C4F25001F5E49 /* libsqlite3.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libsqlite3.dylib; path = ../../../../../../usr/lib/libsqlite3.dylib; sourceTree = "<group>"; };
-		9420A1AC1C1E84EE00B587DF /* FLEX.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = FLEX.framework; path = "../../../Library/Developer/Xcode/DerivedData/FLEX-gixtctkeshzdbwbdapvulcvleeiu/Build/Products/Debug-iphoneos/FLEX.framework"; sourceTree = "<group>"; };
 		943203FC1978F42F00E24DB3 /* AAPLCatalogTableTableViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = AAPLCatalogTableTableViewController.h; sourceTree = "<group>"; };
 		943203FD1978F42F00E24DB3 /* AAPLCatalogTableTableViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = AAPLCatalogTableTableViewController.m; sourceTree = "<group>"; };
 		94CB4D421A97183E0054A905 /* libz.dylib */ = {isa = PBXFileReference; lastKnownFileType = "compiled.mach-o.dylib"; name = libz.dylib; path = usr/lib/libz.dylib; sourceTree = SDKROOT; };
@@ -143,10 +147,11 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				9420A1AD1C1E84EE00B587DF /* FLEX.framework in Frameworks */,
 				779B1EF51C0C4F25001F5E49 /* libsqlite3.dylib in Frameworks */,
 				94CB4D431A97183E0054A905 /* libz.dylib in Frameworks */,
 				5356824018F3656900BAAD62 /* CoreGraphics.framework in Frameworks */,
+				2E6023331F4474C600AD4E56 /* FLEX.framework in Frameworks */,
+				2E6023381F44823D00AD4E56 /* FLEX.framework in Frameworks */,
 				5356824218F3656900BAAD62 /* UIKit.framework in Frameworks */,
 				5356823E18F3656900BAAD62 /* Foundation.framework in Frameworks */,
 			);
@@ -170,6 +175,7 @@
 		5356823118F3656900BAAD62 = {
 			isa = PBXGroup;
 			children = (
+				2E6023371F44823D00AD4E56 /* FLEX.framework */,
 				3EC6487218FF8A5000024205 /* ReadMe.txt */,
 				5356824318F3656900BAAD62 /* UICatalog */,
 				5356823C18F3656900BAAD62 /* Frameworks */,
@@ -188,7 +194,7 @@
 		5356823C18F3656900BAAD62 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
-				9420A1AC1C1E84EE00B587DF /* FLEX.framework */,
+				2E6023321F4474C600AD4E56 /* FLEX.framework */,
 				779B1EF41C0C4F25001F5E49 /* libsqlite3.dylib */,
 				94CB4D421A97183E0054A905 /* libz.dylib */,
 				5356823D18F3656900BAAD62 /* Foundation.framework */,
@@ -334,6 +340,12 @@
 			attributes = {
 				LastUpgradeCheck = 0700;
 				ORGANIZATIONNAME = f;
+				TargetAttributes = {
+					5356823918F3656900BAAD62 = {
+						DevelopmentTeam = PX5UZK844N;
+						ProvisioningStyle = Manual;
+					};
+				};
 			};
 			buildConfigurationList = 5356823518F3656900BAAD62 /* Build configuration list for PBXProject "UICatalog" */;
 			compatibilityVersion = "Xcode 3.2";
@@ -514,6 +526,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = PX5UZK844N;
 				EXCLUDED_SOURCE_FILE_NAMES = "";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -523,8 +536,10 @@
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
 				INFOPLIST_FILE = "UICatalog/UICatalog-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.UICatalog";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chongzzz.flex.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE = "7703e742-0670-433b-b7a8-53b952e2dba8";
+				PROVISIONING_PROFILE_SPECIFIER = com.chongzzz;
 				WRAPPER_EXTENSION = app;
 			};
 			name = Debug;
@@ -534,6 +549,7 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_LAUNCHIMAGE_NAME = LaunchImage;
+				DEVELOPMENT_TEAM = "";
 				EXCLUDED_SOURCE_FILE_NAMES = "FLEX*";
 				FRAMEWORK_SEARCH_PATHS = (
 					"$(inherited)",
@@ -543,8 +559,9 @@
 				GCC_PREFIX_HEADER = "UICatalog/UICatalog-Prefix.pch";
 				INFOPLIST_FILE = "UICatalog/UICatalog-Info.plist";
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.example.apple-samplecode.UICatalog";
+				PRODUCT_BUNDLE_IDENTIFIER = com.chongzzz.flex.demo;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				WRAPPER_EXTENSION = app;
 			};
 			name = Release;
