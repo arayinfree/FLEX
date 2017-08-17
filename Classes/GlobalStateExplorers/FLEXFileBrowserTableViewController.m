@@ -249,8 +249,8 @@
 
 - (BOOL)tableView:(UITableView *)tableView canPerformAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
 {
-    //|| action == @selector(fileBrowserRename:)
-    return action == @selector(fileBrowserDelete:)  || action == @selector(fileBrowserOpen:);
+    //
+    return action == @selector(fileBrowserDelete:)  || action == @selector(fileBrowserOpen:) || action == @selector(fileBrowserRename:);
 }
 
 - (void)tableView:(UITableView *)tableView performAction:(SEL)action forRowAtIndexPath:(NSIndexPath *)indexPath withSender:(id)sender
